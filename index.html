@@ -24,33 +24,34 @@
             </nav>
             <div class="language-selector">
                 <select id="language-select">
-                    <option value="en">English</option>
                     <option value="hi">हिंदी</option>
+                    <option value="en" selected>English</option>
                     <option value="mr">मराठी</option>
                 </select>
             </div>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
-
-    <div class="mobile-nav">
-        <div class="close-btn">&times;</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#rooms-rentals">Rooms & Rentals</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
 
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1 class="translate" data-en="Get a Job in Supa MIDC" data-hi="सुपा एमआईडीसी में नौकरी प्राप्त करें" data-mr="सुपा एमआयडीसी मध्ये नोकरी मिळवा">Get a Job in Supa MIDC</h1>
                 <p class="translate" data-en="Earn ₹20,000/month. Contact us now!" data-hi="₹20,000/माह कमाएं। अभी संपर्क करें!" data-mr="₹20,000/महिना कमवा. आत्ताच संपर्क करा!">Earn ₹20,000/month. Contact us now!</p>
-                <a href="https://wa.me/917030307028" class="btn primary-btn translate" data-en="Call or WhatsApp +917030307028" data-hi="कॉल या व्हाट्सएप +917030307028" data-mr="कॉल किंवा व्हाट्सअॅप +917030307028">Call or WhatsApp +917030307028</a>
+                
+                <div class="contact-dropdown">
+                    <button class="btn primary-btn contact-btn translate" data-en="Call or WhatsApp +917030307028" data-hi="कॉल या व्हाट्सएप +917030307028" data-mr="कॉल किंवा व्हाट्सअॅप +917030307028">Call or WhatsApp +917030307028</button>
+                    <div class="dropdown-content">
+                        <a href="https://wa.me/917030307028" class="whatsapp-option">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="translate" data-en="WhatsApp" data-hi="व्हाट्सएप" data-mr="व्हाट्सअॅप">WhatsApp</span>
+                        </a>
+                        <a href="tel:+917030307028" class="call-option">
+                            <i class="fas fa-phone"></i>
+                            <span class="translate" data-en="Call" data-hi="कॉल" data-mr="कॉल">Call</span>
+                        </a>
+                    </div>
+                </div>
+                
                 <div class="services-highlight">
                     <h2 class="translate" data-en="Our Services" data-hi="हमारी सेवाएं" data-mr="आमच्या सेवा">Our Services</h2>
                     <ul>

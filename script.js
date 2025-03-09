@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('nav');
-    const languageSelector = document.querySelector('.language-selector');
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-            languageSelector.style.display = languageSelector.style.display === 'block' ? 'none' : 'block';
+    // Mobile Navigation Toggle - Removed as no longer needed
+    
+    // Contact Dropdown Toggle
+    const contactBtn = document.querySelector('.contact-btn');
+    const contactDropdown = document.querySelector('.contact-dropdown');
+    
+    if (contactBtn && contactDropdown) {
+        contactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactDropdown.classList.toggle('active');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function closeDropdown(e) {
+                if (!contactDropdown.contains(e.target)) {
+                    contactDropdown.classList.remove('active');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
         });
     }
 
@@ -79,12 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-            }
-
-            // Close mobile menu if open
-            if (window.innerWidth < 768) {
-                nav.style.display = 'none';
-                languageSelector.style.display = 'none';
             }
         });
     });
@@ -181,20 +184,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run animation check on load and scroll
     window.addEventListener('load', animateOnScroll);
     window.addEventListener('scroll', animateOnScroll);
-
-    // Mobile Navigation Toggle
-    const mobileNav = document.querySelector('.mobile-nav');
-    const closeBtn = document.querySelector('.close-btn');
-
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileNav.classList.add('active');
-        });
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            mobileNav.classList.remove('active');
-        });
-    }
 });
